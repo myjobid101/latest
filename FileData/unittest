@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+
+namespace FileData
+{
+   
+
+        
+        public class unittest
+        {
+            [TestMethod]
+            public void Test_Divide()
+            {
+                  
+                string first = "";
+                string second = "";
+                
+                dynamic expected;
+
+                // Act  
+                
+                if (first == "-v")
+                {
+                    var actual=(ThirdPartyTools.FileDetails.Version(second));
+                    if (actual.GetType() == typeof(string))
+                    {
+                        actual = "pass";
+                    }
+                    expected = "pass";
+                    Assert.AreEqual(expected, actual);
+                }
+
+                else if (first == "-v" || first == "--v" || first == "/v" || first == "--version")
+                {
+                    var actual=(ThirdPartyTools.FileDetails.Version(second));
+                    if (actual.GetType() == typeof(string))
+                    {
+                        actual = "pass";
+                    }
+                    expected = "pass";
+                    Assert.AreEqual(expected, actual);
+                }
+                else if (first == "-s" || first == "--s" || first == "/s" || first == "--size")
+                {
+                    var actual=(ThirdPartyTools.FileDetails.Size(second));
+                    if (actual.GetType() == typeof(int))
+                    {
+                        actual = "pass";
+                    }
+                    expected = "pass";
+                    Assert.AreEqual(expected, actual);
+                }
+
+
+               
+            }
+        }  
+    
+}
